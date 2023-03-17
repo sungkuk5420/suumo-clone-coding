@@ -6,7 +6,7 @@ const routes = [
   },
   {
     path: '/add-room',
-    component: () => import('pages/AddRoom.vue'),
+    component: () => import('src/pages/AddRoom.vue'),
   },
 
   // Always leave this as last one,
