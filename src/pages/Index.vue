@@ -57,11 +57,6 @@ export default {
     }
   },
   methods:{
-    returnPosition(string){
-      let data = string.replaceAll(" ", "").split(",");
-      console.log(data)
-      return {lat:parseFloat(data[0]), lng: parseFloat(data[1])};
-    },
     translate(){
 
       console.log()
@@ -112,19 +107,51 @@ export default {
         });
       })
     },
-    updateRooms(){
-      const thisObj =this;
-      const adress1 = "34.707374, 135.5741839";// インプレイス鶴見緑地
-      const adress2 = "34.7062751, 135.5721787"; // アクエルド緑地公園
-      const adress3 = "34.7002751, 135.5721787"; // アクエルド緑地公園
+    getGeoCode(address){
+      const thisObj = this;
+      return new Promise((resolve,reject)=>{
+        
+        var geocoder = new google.maps.Geocoder();
 
+        geocoder.geocode({ 'address': address }, function (results, status) {
+
+          if (status == google.maps.GeocoderStatus.OK) {
+            var latitude = results[0].geometry.location.lat();
+            var longitude = results[0].geometry.location.lng();
+            resolve(thisObj.returnPosition(`${latitude}, ${longitude}`));
+          }
+        });
+      })
+    },
+    returnPosition (string) {
+      let data = string.replaceAll(" ", "").split(",");
+      console.log(data)
+      return { lat: parseFloat(data[0]), lng: parseFloat(data[1]) };
+    },
+    async updateRooms(){
+      const thisObj =this;
+      // const adress1 = "34.707374, 135.5741839";// インプレイス鶴見緑地
+      // const adress2 = "34.7062751, 135.5721787"; // アクエルド緑地公園
+      // const adress3 = "34.7002751, 135.5721787"; // アクエルド緑地公園
+      const adress1 = "大阪市鶴見区諸口1丁目";// インプレイス鶴見緑地
+      const adress2 = "大阪市鶴見区諸口2丁目"; // アクエルド緑地公園
+      const adress3 = "大阪市鶴見区諸口3丁目"; // アクエルド緑地公園
+      const adress4 = "大阪市鶴見区諸口4丁目"; // アクエルド緑地公園
+      const adress5 = "大阪市鶴見区諸口5丁目"; // アクエルド緑地公園
+      const adress6 = "大阪市鶴見区諸口6丁目"; // アクエルド緑地公園
+      const position1  = await thisObj.getGeoCode(adress1)
+      const position2  = await thisObj.getGeoCode(adress2)
+      const position3  = await thisObj.getGeoCode(adress3)
+      const position4  = await thisObj.getGeoCode(adress4)
+      const position5  = await thisObj.getGeoCode(adress5)
+      const position6  = await thisObj.getGeoCode(adress6)
       thisObj.roomDatas = [
         {
           id: 1,
           labelText: thisObj.$t('인플레이스츠루미녹지'),
           img: "building-2.png",
-          position: thisObj.returnPosition(adress1),
-          adress: thisObj.$t('오사카부 오사카시 쓰루미구 미도리1'),
+          position: position1,
+          adress: thisObj.$t(adress1),
           rooms: [
             {
               img: "image-1.png",
@@ -162,7 +189,7 @@ export default {
           id: 2,
           img: "building-1.png",
           labelText: thisObj.$t('아쿠에르도 녹지공원'),
-          position: thisObj.returnPosition(adress2),
+          position: position2,
           adress: thisObj.$t('오사카부 오사카시 쓰루미구 미도리 5'),
           rooms: [
             {
@@ -191,8 +218,95 @@ export default {
           id: 3,
           img: "building-1.png",
           labelText: thisObj.$t('아쿠에르도 녹지공원'),
-          position: thisObj.returnPosition(adress3),
-          adress: thisObj.$t('오사카부 오사카시 쓰루미구 미도리 5'),
+          position: position3,
+          adress: thisObj.$t('오사카부 오사카시 쓰루미구 모로구치 1쵸메'),
+          rooms: [
+            {
+              img: "image-3.png",
+              floor: 3,
+              fee1: "-",
+              fee2: "-",
+              area1: "1DK",
+              area2: "27.28m2",
+              price: 6.4,
+              maintainPrice: "9400" + thisObj.$t('엔')
+            },
+            {
+              img: "image-2.png",
+              floor: 7,
+              fee1: "-",
+              fee2: 6.2,
+              area1: "1DK",
+              area2: "43.04m2",
+              price: 8,
+              maintainPrice: "10400" + thisObj.$t('엔')
+            },
+          ]
+        },
+        {
+          id: 4,
+          img: "building-1.png",
+          labelText: thisObj.$t('아쿠에르도 녹지공원'),
+          position: position4,
+          adress: thisObj.$t('오사카부 오사카시 쓰루미구 모로구치 1쵸메'),
+          rooms: [
+            {
+              img: "image-3.png",
+              floor: 3,
+              fee1: "-",
+              fee2: "-",
+              area1: "1DK",
+              area2: "27.28m2",
+              price: 6.4,
+              maintainPrice: "9400" + thisObj.$t('엔')
+            },
+            {
+              img: "image-2.png",
+              floor: 7,
+              fee1: "-",
+              fee2: 6.2,
+              area1: "1DK",
+              area2: "43.04m2",
+              price: 8,
+              maintainPrice: "10400" + thisObj.$t('엔')
+            },
+          ]
+        },
+        {
+          id: 5,
+          img: "building-1.png",
+          labelText: thisObj.$t('아쿠에르도 녹지공원'),
+          position: position5,
+          adress: thisObj.$t('오사카부 오사카시 쓰루미구 모로구치 1쵸메'),
+          rooms: [
+            {
+              img: "image-3.png",
+              floor: 3,
+              fee1: "-",
+              fee2: "-",
+              area1: "1DK",
+              area2: "27.28m2",
+              price: 6.4,
+              maintainPrice: "9400" + thisObj.$t('엔')
+            },
+            {
+              img: "image-2.png",
+              floor: 7,
+              fee1: "-",
+              fee2: 6.2,
+              area1: "1DK",
+              area2: "43.04m2",
+              price: 8,
+              maintainPrice: "10400" + thisObj.$t('엔')
+            },
+          ]
+        },
+        {
+          id: 6,
+          img: "building-1.png",
+          labelText: thisObj.$t('아쿠에르도 녹지공원'),
+          position: position6,
+          adress: thisObj.$t('오사카부 오사카시 쓰루미구 모로구치 1쵸메'),
           rooms: [
             {
               img: "image-3.png",
@@ -228,7 +342,7 @@ export default {
     // this.$i18n.locale = '';
     const thisObj = this;
 
-    function initMap () {
+    async function initMap () {
 
 
       const yokozutumi = { lat: 34.703961420378484, lng: 135.5707830665288 };
@@ -246,7 +360,7 @@ export default {
         }
       });
 
-      thisObj.updateRooms()
+      await thisObj.updateRooms()
       thisObj.updateMarkers()
       
 
