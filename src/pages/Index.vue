@@ -375,9 +375,6 @@ export default {
 };
 </script>
 
-<style>
-.page-name {}
-</style>
 <style lang="scss">
 #map {
   width: calc(100% - 600px);
@@ -459,5 +456,26 @@ body ,
     align-items: center;
     padding-left: 5px;
   }
+}
+
+
+
+@media only screen and (max-width: 1079px) {
+  /* For mobile: */
+  .map-wrapper {
+    flex-direction: column;
+    #map{
+      width:100%;
+      height:70vh;
+    }
+    .right-board{
+      width:100%;
+      height:30vh;
+    }
+  }
+}
+
+@media only screen and (min-width: 1080px) {
+  /* For desktop: */
 }
 </style>
