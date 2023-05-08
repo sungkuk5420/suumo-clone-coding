@@ -200,7 +200,7 @@ export default {
               area1: "1DK",
               area2: "27.28m2",
               price: 6.4,
-              maintainPrice: "9400" + thisObj.$t('엔')
+              maintainPrice: "9400"
             },
             {
               img: "image-2.png",
@@ -210,7 +210,7 @@ export default {
               area1: "1DK",
               area2: "43.04m2",
               price: 8,
-              maintainPrice: "10400" + thisObj.$t('엔')
+              maintainPrice: "10400"
             },
           ]
         },
@@ -229,7 +229,7 @@ export default {
               area1: "1DK",
               area2: "27.28m2",
               price: 6.4,
-              maintainPrice: "9400" + thisObj.$t('엔')
+              maintainPrice: "9400"
             },
             {
               img: "image-2.png",
@@ -239,7 +239,7 @@ export default {
               area1: "1DK",
               area2: "43.04m2",
               price: 8,
-              maintainPrice: "10400" + thisObj.$t('엔')
+              maintainPrice: "10400"
             },
           ]
         },
@@ -258,7 +258,7 @@ export default {
               area1: "1DK",
               area2: "27.28m2",
               price: 6.4,
-              maintainPrice: "9400" + thisObj.$t('엔')
+              maintainPrice: "9400"
             },
             {
               img: "image-2.png",
@@ -268,7 +268,7 @@ export default {
               area1: "1DK",
               area2: "43.04m2",
               price: 8,
-              maintainPrice: "10400" + thisObj.$t('엔')
+              maintainPrice: "10400"
             },
           ]
         },
@@ -287,7 +287,7 @@ export default {
               area1: "1DK",
               area2: "27.28m2",
               price: 6.4,
-              maintainPrice: "9400" + thisObj.$t('엔')
+              maintainPrice: "9400"
             },
             {
               img: "image-2.png",
@@ -297,7 +297,7 @@ export default {
               area1: "1DK",
               area2: "43.04m2",
               price: 8,
-              maintainPrice: "10400" + thisObj.$t('엔')
+              maintainPrice: "10400"
             },
           ]
         },
@@ -316,7 +316,7 @@ export default {
               area1: "1DK",
               area2: "27.28m2",
               price: 6.4,
-              maintainPrice: "9400" + thisObj.$t('엔')
+              maintainPrice: "9400"
             },
             {
               img: "image-2.png",
@@ -326,7 +326,7 @@ export default {
               area1: "1DK",
               area2: "43.04m2",
               price: 8,
-              maintainPrice: "10400" + thisObj.$t('엔')
+              maintainPrice: "10400"
             },
           ]
         },
