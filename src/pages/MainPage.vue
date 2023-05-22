@@ -9,6 +9,10 @@ import ComputedMixin from "../ComputedMixin";
 import UtilMethodMixin from "../UtilMethodMixin";
 export default {
   mixins: [ComputedMixin, UtilMethodMixin],
+  data(){
+    return {
+    }
+  },
   mounted() {
     // this.showLoading();
   },

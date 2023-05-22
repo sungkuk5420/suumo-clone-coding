@@ -11,3 +11,8 @@ body {
 .q-header--bordered {
     border: 0 !important;
 }
+
+.q-header .q-tab__content,
+.q-footer .q-tab__content {
+    min-width: auto;
+}
