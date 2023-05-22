@@ -1,1 +1,13 @@
 // app global css in SCSS form
+body {
+    font-family: 'NanumSquare', sans-serif
+}
+
+.q-field__marginal,
+.q-field__control {
+    height: 40px;
+}
+
+.q-header--bordered {
+    border: 0 !important;
+}
