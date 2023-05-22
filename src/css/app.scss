@@ -1,4 +1,9 @@
 // app global css in SCSS form
+
+* {
+    box-sizing: border-box;
+}
+
 body {
     font-family: 'NanumSquare', sans-serif
 }

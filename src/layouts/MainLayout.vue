@@ -21,20 +21,6 @@
                     <q-btn flat label="고객센터" no-caps></q-btn>
                 </div>
              </div>
-             <div class="second-header">
-                    <q-tabs 
-                    v-model="mainTab"
-                    active-color="primary"
-                    indicator-color="white"
-                    class="text-dark"
-                    >
-                        <q-tab name="home" label="홈" />
-                        <q-tab name="recommend" label="추천물건" />
-                        <q-tab name="area" label="지역별" />
-                        <q-tab name="station" label="역별" />
-                
-                    </q-tabs>
-             </div>
         </q-header>
         
         <q-footer class="main-footer">
@@ -51,12 +37,8 @@
 <script>
 export default {
     name: "MainLayout",
-    components: {
-        // EssentialLink 
-    },
     data () {
         return {
-            mainTab: "home"
         };
     },
     computed: {
@@ -93,7 +75,7 @@ export default {
     height: 100px;
 
     &__left{
-        width: 340px;
+        width: 450px;
         span{
             font-size: 16px;
         }
@@ -109,20 +91,12 @@ export default {
         flex: 1;
     }
     &__right{
-        width: 240px;
+        display: flex;
+        justify-content: center;
+        width: 450px;
     }
     .q-btn{
         font-weight: bold;
-    }
-}
-.second-header{
-    height: 65px;
-    margin-left: auto;
-    margin-right: auto;
-    .q-tabs{
-        display: flex;
-        margin-right: auto;
-        width: 300px;
     }
 }
 @media only screen and (max-width: 1079px) {
